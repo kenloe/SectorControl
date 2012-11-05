@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>GameBoard</Name>
         <Access>Public</Access>
-        <Location left="230" top="25" />
+        <Location left="35" top="25" />
         <Size width="162" height="185" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int Width</Member>
@@ -19,7 +19,7 @@
       <Entity type="Class">
         <Name>GameSpace</Name>
         <Access>Public</Access>
-        <Location left="230" top="261" />
+        <Location left="35" top="239" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">bool Occupied</Member>
@@ -29,7 +29,7 @@
       <Entity type="Class">
         <Name>Ship</Name>
         <Access>Internal</Access>
-        <Location left="463" top="25" />
+        <Location left="409" top="10" />
         <Size width="243" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void ShipType(string type)</Member>
@@ -41,7 +41,7 @@
       <Entity type="Class">
         <Name>Torpedo</Name>
         <Access>Public</Access>
-        <Location left="748" top="283" />
+        <Location left="856" top="390" />
         <Size width="162" height="102" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -65,17 +65,46 @@
       <Entity type="Interface">
         <Name>GunBoat</Name>
         <Access>Public</Access>
-        <Location left="506" top="330" />
+        <Location left="322" top="340" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Interface">
+        <Name>Fighter</Name>
+        <Access>Public</Access>
+        <Location left="562" top="340" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
       </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="2" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>496</X>
+          <Y>251</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>412</X>
+          <Y>315</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="6">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>550</X>
+          <Y>253</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>642</X>
+          <Y>315</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
