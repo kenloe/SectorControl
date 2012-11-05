@@ -1,0 +1,84 @@
+<Project>
+  <Name>SectorControl</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Game</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>GameBoard</Name>
+        <Access>Public</Access>
+        <Location left="230" top="25" />
+        <Size width="162" height="185" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int Width</Member>
+        <Member type="Field">int Length</Member>
+        <Member type="Field">int Height</Member>
+        <Member type="Method">public void construct(int length = 44, int width = 32, int height = 0)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameSpace</Name>
+        <Access>Public</Access>
+        <Location left="230" top="261" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool Occupied</Member>
+        <Member type="Property">public int GetOccupied { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Ship</Name>
+        <Access>Internal</Access>
+        <Location left="463" top="25" />
+        <Size width="243" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void ShipType(string type)</Member>
+        <Member type="Property">public int CurrentSpeed { get; set; }</Member>
+        <Member type="Property">public int CurrentDefense { get; set; }</Member>
+        <Member type="Property">public int CurrentDamageReduction { get; set; }</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Torpedo</Name>
+        <Access>Public</Access>
+        <Location left="748" top="283" />
+        <Size width="162" height="102" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pilot</Name>
+        <Access>Public</Access>
+        <Location left="833" top="10" />
+        <Size width="204" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Pilot(string Name, string CallSign)</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public string CallSign { get; set; }</Member>
+        <Member type="Property">public Ship Ship { get; set; }</Member>
+        <Member type="Property">public int Piloting { get; set; }</Member>
+        <Member type="Property">public int Gunnery { get; set; }</Member>
+        <Member type="Property">public int Kills { get; set; }</Member>
+        <Member type="Property">public Ship PilotsShip { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>GunBoat</Name>
+        <Access>Public</Access>
+        <Location left="506" top="330" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="2" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
