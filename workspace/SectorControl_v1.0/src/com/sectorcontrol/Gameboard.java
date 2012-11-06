@@ -7,7 +7,7 @@ public class Gameboard {
 	// Fields
 	private int boardWidth;
 	private int boardLength;
-	private ArrayList<ArrayList<Integer>> rowList = new ArrayList<ArrayList<Integer>>();
+	private ArrayList<ArrayList<GameSpace>> rowList = new ArrayList<ArrayList<GameSpace>>();
 	
 	// Constructors
 	public Gameboard() {
@@ -25,7 +25,7 @@ public class Gameboard {
 		int maxInsertIndex = 0;	// maximum number of spaces for a specific row
 		boolean reachedLowerRight = false;
 		boolean reachedUpperLeft = false;
-		int boardSpaceNum = 1;
+		int gameSpaceID = 1;
 		
 		// Calculate board space #1's position in the 2d array.
 		startingPoint = (boardWidth / 2) - 1;
@@ -38,18 +38,21 @@ public class Gameboard {
 		rows_columns = ((boardLength + 1) / 2) + ((boardWidth -3) / 2) + 2;
 		
 		for (int i = 0; i < rows_columns; i++) {
-			ArrayList<Integer> boardRow = new ArrayList<Integer>();
+			ArrayList<GameSpace> boardRow = new ArrayList<GameSpace>();
 			if (i == 0 || i == (rows_columns - 1)) {
 				for (int j = 0; j < rows_columns; j++) {
-					boardRow.add(0);
+					GameSpace gameSpace = new GameSpace(0);
+					boardRow.add(gameSpace);
 				}
 			} else {
 				for (int j = 0; j < rows_columns; j++) {
 					if (j < startingPoint || j >= maxInsertIndex) {
-						boardRow.add(0);
+						GameSpace gameSpace = new GameSpace(0);
+						boardRow.add(gameSpace);
 					} else {
-						boardRow.add(boardSpaceNum);
-						boardSpaceNum++;
+						GameSpace gameSpace = new GameSpace(gameSpaceID);
+						boardRow.add(gameSpace);
+						gameSpaceID++;
 						if (j + 1 == rows_columns) {
 							reachedLowerRight = true;
 						}
@@ -105,16 +108,16 @@ public class Gameboard {
 	public void printGameBoard() {
 		for (int i = 0; i < rowList.size(); i++) {
 			for (int j = 0; j < rowList.get(i).size(); j++) {
-				if (rowList.get(i).get(j) < 1) {
+				if ((rowList.get(i).get(j)).getGameSpaceID() < 1) {
 					System.out.print("   ");
-				} else if (rowList.get(i).get(j) < 10) {
+				} else if ((rowList.get(i).get(j)).getGameSpaceID() < 10) {
 					System.out.print("00");
-					System.out.print(rowList.get(i).get(j));
-				} else if (rowList.get(i).get(j) < 100) {
+					System.out.print((rowList.get(i).get(j)).getGameSpaceID());
+				} else if ((rowList.get(i).get(j)).getGameSpaceID() < 100) {
 					System.out.print("0");
-					System.out.print(rowList.get(i).get(j));
+					System.out.print((rowList.get(i).get(j)).getGameSpaceID());
 				} else {
-					System.out.print(rowList.get(i).get(j));
+					System.out.print((rowList.get(i).get(j)).getGameSpaceID());
 				}
 				System.out.print("  ");
 			}

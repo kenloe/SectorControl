@@ -1,0 +1,11 @@
+package com.sectorcontrol;
+
+public class GameSpace {
+	
+	// Fields
+	private int gamespaceID;
+	
+	public GameSpace() {
+		this.gamespaceID = 0;
+	}
+}
