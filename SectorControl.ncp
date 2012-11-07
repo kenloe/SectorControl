@@ -22,7 +22,8 @@
         <Location left="35" top="239" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">bool Occupied</Member>
+        <Member type="Field">private bool Occupied</Member>
+        <Member type="Field">int spaceID</Member>
         <Member type="Property">public int GetOccupied { get; }</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -146,7 +147,13 @@
       </Entity>
     </Entities>
     <Relationships>
+<<<<<<< HEAD
       <Relationship type="Association" first="2" second="4">
+=======
+      <Relationship type="Association" first="2" second="5">
+        <Label>
+        </Label>
+>>>>>>> 80341424a2d6c890eab9a989c44dd1d85e64e560
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -160,9 +167,13 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
+<<<<<<< HEAD
       <Relationship type="Association" first="2" second="5">
         <Label>
         </Label>
+=======
+      <Relationship type="Association" first="2" second="6">
+>>>>>>> 80341424a2d6c890eab9a989c44dd1d85e64e560
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
