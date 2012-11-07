@@ -29,81 +29,149 @@
       <Entity type="Class">
         <Name>Ship</Name>
         <Access>Internal</Access>
-        <Location left="409" top="10" />
-        <Size width="243" height="216" />
+        <Location left="249" top="14" />
+        <Size width="243" height="519" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private String Name = ""</Member>
+        <Member type="Field">private int CurrentDrive = 0</Member>
+        <Member type="Field">private int CurrentDefValue = 0</Member>
+        <Member type="Field">private int CurrentDamReduct = 0</Member>
+        <Member type="Field">private int CurrentNumDecoys = 0</Member>
+        <Member type="Field">private int CurrentPointDef = 0</Member>
+        <Member type="Field">private int[] CurrentLocation = {0,0}</Member>
+        <Member type="Field">private int CurrentHeading = 0</Member>
+        <Member type="Field">private int CurrentNumOfWeapons = 0</Member>
+        <Member type="Field">private int TightTurnCost = 3</Member>
+        <Member type="Field">private int DamageControl = 0</Member>
+        <Member type="Field">private int EntryPoint = 0</Member>
+        <Member type="Field">private int ExitPoint = 0</Member>
         <Member type="Method">public void ShipType(string type)</Member>
         <Member type="Property">public int CurrentSpeed { get; set; }</Member>
         <Member type="Property">public int CurrentDefense { get; set; }</Member>
-        <Member type="Property">public int CurrentDamageReduction { get; set; }</Member>
+        <Member type="Property">public int CurrentDamageReduct { get; set; }</Member>
+        <Member type="Property">public int NumDecoys { get; set; }</Member>
+        <Member type="Property">public int PointDef { get; set; }</Member>
+        <Member type="Property">public int[] Location { get; set; }</Member>
+        <Member type="Property">public int CurrentHeading { get; set; }</Member>
+        <Member type="Property">public int CurrentNumOfWeapons { get; set; }</Member>
+        <Member type="Property">public int TightTurnCost { get; set; }</Member>
+        <Member type="Property">public int DamageControl { get; set; }</Member>
+        <Member type="Property">public int EntryPoint { get; set; }</Member>
+        <Member type="Property">public int ExitPoint { get; set; }</Member>
         <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Torpedo</Name>
         <Access>Public</Access>
-        <Location left="856" top="390" />
-        <Size width="162" height="102" />
+        <Location left="565" top="318" />
+        <Size width="162" height="213" />
         <Collapsed>False</Collapsed>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Pilot</Name>
-        <Access>Public</Access>
-        <Location left="833" top="10" />
-        <Size width="204" height="216" />
-        <Collapsed>False</Collapsed>
-        <Member type="Constructor">public Pilot(string Name, string CallSign)</Member>
-        <Member type="Property">public string Name { get; set; }</Member>
-        <Member type="Property">public string CallSign { get; set; }</Member>
-        <Member type="Property">public Ship Ship { get; set; }</Member>
-        <Member type="Property">public int Piloting { get; set; }</Member>
-        <Member type="Property">public int Gunnery { get; set; }</Member>
-        <Member type="Property">public int Kills { get; set; }</Member>
-        <Member type="Property">public Ship PilotsShip { get; set; }</Member>
+        <Member type="Field">private String Type = ""</Member>
+        <Member type="Field">private int Speed = 12</Member>
+        <Member type="Field">private Pilot Target = null</Member>
+        <Member type="Field">private int DamageDice = 0</Member>
+        <Member type="Property">public String Type { get; set; }</Member>
+        <Member type="Property">public int Speed { get; set; }</Member>
+        <Member type="Property">public Pilot Target { get; set; }</Member>
+        <Member type="Property">public int DamageDice { get; set; }</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Interface">
         <Name>GunBoat</Name>
         <Access>Public</Access>
-        <Location left="322" top="340" />
+        <Location left="167" top="610" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
       </Entity>
       <Entity type="Interface">
         <Name>Fighter</Name>
         <Access>Public</Access>
-        <Location left="562" top="340" />
+        <Location left="392" top="610" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
       </Entity>
+      <Entity type="Class">
+        <Name>Pilot</Name>
+        <Access>Public</Access>
+        <Location left="565" top="14" />
+        <Size width="173" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String CallSign = ""</Member>
+        <Member type="Field">private int Tier = 1</Member>
+        <Member type="Field">private int Piloting = 5</Member>
+        <Member type="Field">private int Gunnery = 5</Member>
+        <Member type="Field">private int Kills = 0</Member>
+        <Member type="Field">private Ship PilotsShip = null</Member>
+        <Member type="Property">public String CallSign { get; set; }</Member>
+        <Member type="Property">public int Tier { get; set; }</Member>
+        <Member type="Property">public int Piloting { get; set; }</Member>
+        <Member type="Property">public int Gunnery { get; set; }</Member>
+        <Member type="Property">public int Kills { get; set; }</Member>
+        <Member type="Property">public Ship PilotsShip { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Gunner</Name>
+        <Access>Internal</Access>
+        <Location left="772" top="14" />
+        <Size width="209" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int Gunnery = 0</Member>
+        <Member type="Field">private Weapon WeaponType = null</Member>
+        <Member type="Field">private Pilot Target = null</Member>
+        <Member type="Field">private int[] FiringArc = {0,0,0,0,0,0}</Member>
+        <Member type="Property">public int Gunnery { get; set; }</Member>
+        <Member type="Property">public Weapon WeaponType { get; set; }</Member>
+        <Member type="Property">public Pilot Target { get; set; }</Member>
+        <Member type="Property">public int[] FiringArc { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Weapon</Name>
+        <Access>Public</Access>
+        <Location left="786" top="318" />
+        <Size width="195" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String Name = ""</Member>
+        <Member type="Field">private int DamageDice = 0</Member>
+        <Member type="Field">private Pilot Target = null</Member>
+        <Member type="Field">private int[] Ranges = {0,0,0}</Member>
+        <Member type="Field">private int SpeedRestriction = 0</Member>
+        <Member type="Property">public String Name { get; set; }</Member>
+        <Member type="Property">public int DamageDice { get; set; }</Member>
+        <Member type="Property">public Pilot Target { get; set; }</Member>
+        <Member type="Property">public int[] Ranges { get; set; }</Member>
+        <Member type="Property">public int SpeedRestriction { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Association" first="2" second="5">
+      <Relationship type="Association" first="2" second="4">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>496</X>
-          <Y>251</Y>
+          <X>336</X>
+          <Y>558</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>412</X>
-          <Y>315</Y>
+          <X>257</X>
+          <Y>585</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="2" second="6">
+      <Relationship type="Association" first="2" second="5">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>550</X>
-          <Y>253</Y>
+          <X>390</X>
+          <Y>560</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>642</X>
-          <Y>315</Y>
+          <X>472</X>
+          <Y>585</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
