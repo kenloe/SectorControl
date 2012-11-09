@@ -147,13 +147,9 @@
       </Entity>
     </Entities>
     <Relationships>
-<<<<<<< HEAD
-      <Relationship type="Association" first="2" second="4">
-=======
       <Relationship type="Association" first="2" second="5">
         <Label>
         </Label>
->>>>>>> 80341424a2d6c890eab9a989c44dd1d85e64e560
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -167,13 +163,7 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-<<<<<<< HEAD
-      <Relationship type="Association" first="2" second="5">
-        <Label>
-        </Label>
-=======
       <Relationship type="Association" first="2" second="6">
->>>>>>> 80341424a2d6c890eab9a989c44dd1d85e64e560
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
